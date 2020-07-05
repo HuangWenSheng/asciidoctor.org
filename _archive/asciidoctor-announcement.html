@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="generator" content="Asciidoctor 0.0.9">
-    <title>AsciiDoc, powered by Asciidoctor, returns to GitHub and its 5+ million repositories</title>
+    <title>AsciiDoc, 强大的 Asciidoctor, 重返 GitHub 和 超过500万个仓库</title>
     <style>
       /* ---------------------------------------------------------------------------
         Asciidoctor Stylesheet
@@ -385,7 +385,7 @@
   
   <body class="article">
     <div id="header">
-      <h1>AsciiDoc, powered by Asciidoctor, returns to GitHub and its 5+ million repositories</h1>
+      <h1>AsciiDoc, 强大的 Asciidoctor, 重返 GitHub 和 超过500万个仓库</h1>
       <span id="author"><a href="http://github.com/mojavelinux">Dan Allen</a></span><br>
       <span id="revdate">2013-01-30</span>
     </div>
@@ -393,7 +393,7 @@
 <div id="preamble">
   <div class="sectionbody">
     <div class="paragraph">
-      <p>从12月初开始的整个假期， GitHub&#8217;s <a href="https://github.com/erebor">Ryan Waldron</a>, Red Hat&#8217;s <a href="https://github.com/mojavelinux">Dan Allen</a> 和 <a href="https://github.com/asciidoctor/asciidoctor/graphs/contributors">其他贡献者</a> 已经合作开发了 <strong>Asciidoctor</strong> (<a href="http://asciidoc.org">项目站点</a>, <a href="http://github.com/asciidoctor/asciidoctor">代码仓库</a>), 这是一种完全用 Ruby<span class="footnote">[<a id="_footnoteref_1" href="#_footnote_1" title="View footnote." class="footnote">1</a>]</span> 编写的新的AsciiDoc 开源实现 。</p>
+      <p>从12月初开始的整个假期， GitHub&#8217;s <a href="https://github.com/erebor">Ryan Waldron</a>, Red Hat&#8217;s <a href="https://github.com/mojavelinux">Dan Allen</a> 和 <a href="https://github.com/asciidoctor/asciidoctor/graphs/contributors">其他贡献者</a> 已经合作开发了 <strong>Asciidoctor</strong> (<a href="http://asciidoc.org">项目站点</a>, <a href="http://github.com/asciidoctor/asciidoctor">代码仓库</a>), 这是一种完全用 Ruby<span class="footnote">[<a id="_footnoteref_1" href="#_footnote_1" title="View footnote." class="footnote">1</a>]</span> 编写的新的 AsciiDoc 开源实现 。</p>
     </div>
     <div class="paragraph">
       <p>这个实现开始于两个核心目标:</p>
@@ -460,7 +460,7 @@
       </colgroup>
       <tbody>
         <tr>
-          <td class="tableblock halign-left valign-top"><p class="tableblock header">源码文档</p></td>
+          <td class="tableblock halign-left valign-top"><p class="tableblock header">源文件</p></td>
         </tr>
         <tr>
           <td class="tableblock halign-left valign-top"><div><div class="listingblock">
@@ -600,29 +600,29 @@ using the <tt>yum</tt> command:</p>
 </div>
 <div class="paragraph">
   
-  <p>While Asciidoctor aims to offer full compliance with the AsciiDoc syntax (with some exceptions, noted in the project <a href="https://github.com/asciidoctor/asciidoctor#readme">README</a>), it&#8217;s more than just a clone.</p>
+  <p>虽然 Asciidoctor 的目标是提供与 AsciiDoc 语法的完全一致 (除了一些例外，在项目 <a href="https://github.com/asciidoctor/asciidoctor#readme">README</a>中有说明)，但它并不是一个克隆。</p>
 </div>
 <div class="paragraph">
-  <div class="title">Built-in and custom templates</div>
-  <p>Asciidoctor uses a set of built-in ERB templates to generate HTML 5 and DocBook 4.5 output that is structurally equivalent to what AsciiDoc produces. Any of these templates can be replaced by a custom template written in any template language available in the Ruby ecosystem. Custom template rendering is handled by the <a href="https://github.com/rtomayko/tilt">Tilt</a> template abstraction library, a project created by another GitHubber, <a href="https://github.com/rtomayko">Ryan Tomayko</a>.</p>
+  <div class="title">内置和自定义模板</div>
+  <p>Asciidoctor 使用一组内置的ERB模板来生成 HTML 5 和 DocBook 4.5 输出，这些输出在结构上与 AsciiDoc 生成的输出相同。这些模板都可以被用Ruby生态系统中可用的任何模板语言编写的自定义模板替换 。自定义模板呈现由 <a href="https://github.com/rtomayko/tilt">Tilt</a> 模板抽象库处理，这是另一个 GitHubber, <a href="https://github.com/rtomayko">Ryan Tomayko</a> 创建的一个项目 。</p>
 </div>
 <div class="paragraph">
-  <div class="title">Parser and object model</div>
+  <div class="title">解析器和对象模型</div>
   <p>Leveraging the Ruby stack isn&#8217;t the only benefit of Asciidoctor. Unlike the AsciiDoc Python implementation, Asciidoctor parses and renders the source document in discrete steps. This makes rendering the document optional and gives Ruby programs the opportunity to extract, add or replace information in the document by interacting with the document object model Asciidoctor assembles. Developers can use the full power of the Ruby programming language to play with the content in the document.</p>
 </div>
 <div class="paragraph">
-  <div class="title">Performance and security</div>
+  <div class="title">性能和安全</div>
   <p>No coverage of Asciidoctor would be complete without mention of its <em>speed</em>. Despite not being an original goal of the project, Asciidoctor has proven startlingly fast. It loads, parses and renders documents at least <strong>25 times as fast</strong> as than the Python implementation. That&#8217;s good news for developer productivity and good news for GitHub or any server-side application that needs to render AsciiDoc markup. Asciidoctor also offers several levels of security, further justifying its suitability for server-side deployments.</p>
 </div>
 <div class="paragraph">
-  <div class="title">Beyond Ruby</div>
+  <div class="title">超越 Ruby</div>
   <p>Asciidoctor&#8217;s usage is not limited to the Ruby community. Thanks to <a href="http://jruby.org">JRuby</a>, a port of Ruby to the JVM, Asciidoctor can be used inside Java applications as well (and eventually in Java build tools like Apache Maven). Asciidoctor also ships with a command-line interface (cli), written by Red Hat&#8217;s <a href="http://github.com/LightGuard">Jason Porter</a>. The Asciidoctor cli, <a href="http://asciidoctor.org/man/asciidoctor"><tt>asciidoctor</tt></a>, is a drop-in replacement for the <tt>asciidoc.py</tt> script from the AsciiDoc Python distribution.</p>
 </div>
 
   </div>
 </div>
 <div class="sect1">
-  <h2 id="_the_future_of_asciidoctor_and_asciidoc">The future of Asciidoctor and AsciiDoc</h2>
+  <h2 id="_the_future_of_asciidoctor_and_asciidoc">Asciidoctor 和 AsciiDoc 的未来</h2>
   <div class="sectionbody">
 <div class="paragraph">
   
