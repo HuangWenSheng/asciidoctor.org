@@ -16,34 +16,34 @@ image:https://secure.travis-ci.org/asciidoctor/asciidoctor.org.svg?branch=master
 image:https://www.netlify.com/img/global/badges/netlify-dark.svg[Deploy Status,45,20,link={uri-netlify-deploys}]
 endif::[]
 
-This is the project site for the https://asciidoctor.org[Asciidoctor] project.
-The site is composed in AsciiDoc, styled by https://foundation.zurb.com/sites/docs/v/4.3.2[Foundation 4], baked with {uri-awestruct}[Awestruct], and hosted on {uri-netlify}[Netlify].
+这是 https://asciidoctor.org[Asciidoctor] 项目的网站。
+该网站由 AsciiDoc 组成,  https://foundation.zurb.com/sites/docs/v/4.3.2[Foundation 4] 设计,  {uri-awestruct}[Awestruct] 制作, 在 {uri-netlify}[Netlify] 上托管。
 
-For instructions on how to install Awestruct and its dependencies, refer to the <<Install Awestruct>> section below.
+有关如何安装 Awestruct 及其依赖项的说明， 请参阅下面的 <<安装 Awestruct>> 部分。
 
-== Preview the site locally
+== 本地预览网站
 
-To preview the site locally, simply run the default rake build task:
+要在本地预览站点，只需运行默认的rake构建任务:
 
  $ rake
 
-The default rake build task is `preview`, so you're effectively typing:
+默认的 rake 构建任务是 `preview`，所以你可以输入:
 
  $ rake preview
 
-The `preview` task is just a short way of invoking Awestruct in development mode directly:
+`preview` 任务只是在开发模式下直接调用 Awestruct 的一种简短方式:
 
  $ awestruct -d
 
-Now visit http://localhost:4242 to preview the site.
+现在访问 http://localhost:4242 预览该站点。
 
-To rebuild the site from a clean state, pass the `--force` flag to the `preview` task:
+要从一个干净的状态重建站点，将 `--force` 标志传递到 `preview` 任务:
 
  $ rake preview[--force]
 
-You can pass any flag through to Awestruct using the syntax in the previous command.
+您可以使用前面命令中的语法将任何标志传递给 Awestruct 。
 
-If you just want to generate the site, run:
+如果你只是想生成网站，运行:
 
  $ rake gen
 
@@ -58,36 +58,36 @@ If you're building the site on Linux and Awestruct fails to locate a JavaScript 
  $ export EXECJS_RUNTIME=SpiderMonkey
 ////
 
-== Add and commit files
+== 添加和提交文件
 
-Add new files (such as a new blog entry or image):
+添加新文件(如新的博客条目或图像):
 
  $ git add news/news-slug.adoc
 
-or all new files present in a directory (it only affects new files, skips files already committed)
+或者目录中出现的所有新文件(它只影响新文件，跳过已经提交的文件)
 
  $ git add news/
 
-Commit all files marked to be committed, including new files that were just added:
+提交所有标记为提交的文件，包括刚刚添加的新文件:
 
  $ git commit -m 'your message here'
 
-Commit all files that have changed, even if not marked to be committed:
+提交所有已更改的文件，即使没有标记为提交:
 
  $ git commit -a -m 'your message here'
 
-Make sure there are no files that are "untracked" or "modified":
+确保没有文件是 "untracked" 或 "modified":
 
  $ git status
 
-You should see:
+您应该看到:
 
 [.output]
 ....
 nothing to commit (working directory clean)
 ....
 
-Now you are ready to deploy.
+现在可以部署了。
 
 ////
 == Deploy the site to GitHub Pages
@@ -112,58 +112,58 @@ If you want to push without triggering a publish, add the following to the commi
 ....
 ////
 
-== Install Awestruct
+== 安装 Awestruct
 
-First, install https://rvm.io[RVM].
-Trust me on this.
+首先, 安装 https://rvm.io[RVM].
+相信我。
 
  $ curl -#L https://get.rvm.io | bash -s stable --ruby
 
-Next, setup an RVM gemset for working with the Asciidoctor site:
+接下来，为让 Asciidoctor 站点工作，设置 RVM gemset :
 
  $ rvm use 2.4 --create
 
-At this point, you could install Awestruct directly, but since the site build has some additional dependencies, it's best to let bundler handle the installation.
-Bundler will also ensure that you are using the correct versions of each gem when you run Awestruct.
+此时，您可以直接安装Awestruct，但是由于站点构建有一些额外的依赖项，最好让bundler来处理安装。
+Bundler还将确保您在运行Awestruct时使用了每个gem的正确版本。
 
  $ bundle --path=.bundle/gems
 
-You're now Awestruct!
+你现在 Awestruct !
 
-== Hosting
+== 主机
 
-This website is hosted on {uri-netlify}[Netlify] at the domain name asciidoctor.org.
-It's managed by the account docbot [at] asciidoctor [dot] org and other Asciidoctor administrators.
+本网站位于[Netlify]，域名为 asciidoctor.org。
+它由帐户docbot[at]asciidoctor[dot]org 和其他 Asciidoctor 管理员管理。
 
-=== Deployment
+=== 部署
 
-Netlify also handles generating and deploying the site.
-Deployment is triggered via a webhook on the master branch of the git repository.
-The deploy job executes the following command:
+Netlify还负责生成和部署站点。
+部署是通过git存储库主分支上的webhook触发的。
+部署作业执行以下命令:
 
  $ rake deploy:netlify
 
-The version of Ruby is set using an environment variable in the Netlify configuration.
+Ruby的版本是使用Netlify配置中的环境变量设置的。
 
-The deploy logs for asciidoctor.org can be viewed at {uri-netlify-deploys}.
+asciidoctor.org 的部署日志可以在 {uri-netlify-deploys} 中查看。
 
 === DNS
 
-There are two DNS records that point asciidoctor.org and www.asciidoctor.org to the Netlify servers:
+有两个DNS记录指向Netlify服务器的asciidoctor.org和www.asciidoctor.org:
 
  @ 3600 IN A 104.198.14.52
  www 3600 IN CNAME asciidoctor.netlify.com.
 
-The Netlify server automatically sets up a redirect that points from www.asciidoctor.org to asciidoctor.org.
+Netlify服务器自动设置从www.asciidoctor.org指向asciidoctor.org的重定向。
 
-=== TLS Certificate (https)
+=== TLS 证书 (https)
 
-The TLS certificate for asciidoctor.org and www.asciidoctor.org was issued using {uri-letsencrypt}[Let's Encrypt] and is managed by {uri-netlify}[Netlify].
+asciidoctor.org 和 www.asciidoctor.org 的 TLS 证书是使用 {uri-letsencrypt}[Let's Encrypt] 颁发的，由 {uri-netlify}[Netlify] 管理 。
 
-Verify the certificate is valid using:
+使用以下方法验证证书是否有效:
 
  $ curl -vI https://asciidoctor.org
 
-Look for `CN=asciidoctor.org` under the "`Server certificate`" section.
+在 "`Server certificate`" 部分中查找  `CN=asciidoctor.org`  。
 
-Thanks to Netlify, the certificate will be regenerated automatically when it nears its expiry date.
+感谢 Netlify，证书将在接近到期日期时自动重新生成 。
