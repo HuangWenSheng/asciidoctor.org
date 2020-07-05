@@ -70,11 +70,11 @@ If you're building the site on Linux and Awestruct fails to locate a JavaScript 
 
 提交所有标记为提交的文件，包括刚刚添加的新文件:
 
- $ git commit -m 'your message here'
+ $ git commit -m '你的信息在这里'
 
 提交所有已更改的文件，即使没有标记为提交:
 
- $ git commit -a -m 'your message here'
+ $ git commit -a -m '你的信息在这里'
 
 确保没有文件是 "untracked" 或 "modified":
 
@@ -114,8 +114,8 @@ If you want to push without triggering a publish, add the following to the commi
 
 == 安装 Awestruct
 
-首先, 安装 https://rvm.io[RVM].
-相信我。
+首先, 安装 https://rvm.io[RVM] 。
+相信我 。
 
  $ curl -#L https://get.rvm.io | bash -s stable --ruby
 
